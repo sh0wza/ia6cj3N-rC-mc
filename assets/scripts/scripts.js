@@ -1,14 +1,16 @@
 var requestOptions = {
     method: 'GET',
-  };
+};
   
 fetch("https://wtfismyip.com/json", requestOptions)
 .then(response => response.json())
 .then(result => {
-  console.log(result); // Check the value of result
-  const cityName = result.YourFuckingCity;
-  const cityElement = document.getElementById("address");
-  cityElement.innerHTML = cityName;
+    console.log(result); // Check the value of result
+    const cityName = result.YourFuckingCity;
+    const cityElements = document.getElementsByClassName("address");
+    for (let i = 0; i < cityElements.length; i++) {
+    cityElements[i].innerHTML = cityName;
+    }
 })
 .catch(error => console.log('error', error));
 
