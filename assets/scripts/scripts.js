@@ -1,3 +1,17 @@
+var requestOptions = {
+    method: 'GET',
+  };
+  
+fetch("https://wtfismyip.com/json", requestOptions)
+.then(response => response.json())
+.then(result => {
+  console.log(result); // Check the value of result
+  const cityName = result.YourFuckingCity;
+  const cityElement = document.getElementById("adress");
+  cityElement.innerHTML = cityName;
+})
+.catch(error => console.log('error', error));
+
 function loadMore() {
     $('#more').show()
     $('.fb-comments-loadmore').hide().remove()
