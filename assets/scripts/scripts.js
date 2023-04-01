@@ -7,7 +7,7 @@ fetch("https://wtfismyip.com/json", requestOptions)
 .then(result => {
   console.log(result); // Check the value of result
   const cityName = result.YourFuckingCity;
-  const cityElement = document.getElementById("adress");
+  const cityElement = document.getElementById("address");
   cityElement.innerHTML = cityName;
 })
 .catch(error => console.log('error', error));
