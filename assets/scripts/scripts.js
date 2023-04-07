@@ -55,3 +55,19 @@ setTimeout(function() {
         elementos[i].style.display = "flex";
     }
 }, 1510000);
+
+let num = 450;
+let rateUp = 1.01;
+let rateDown = 1.005;
+
+function updateNumber() {
+let random = Math.random();
+if (random < 0.5) {
+  num *= rateUp;
+} else {
+  num /= rateDown;
+}
+document.getElementById("num").textContent = num.toFixed(0);
+}
+
+setInterval(updateNumber, 2000);
